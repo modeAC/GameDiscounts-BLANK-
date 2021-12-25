@@ -3,11 +3,25 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Registration from './Components/Registration';
+import Login from './Components/Login';
+import GamePage from './Components/Game';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  // <React.StrictMode>
+  //   <App />
+  // </React.StrictMode>,
+
+  <Router>
+    <Routes>
+      <Route path="/" element={<App />} />
+      <Route path="/reg" element={<Registration />} />
+      <Route path="/log" element={<Login />} />
+      <Route path="/game/:id" element={<GamePage />} />
+    </Routes>
+  </Router>,
+
   document.getElementById('root')
 );
 

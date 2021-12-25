@@ -1,0 +1,99 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url("./resources/fonts/Montserrat-ExtraLight.ttf");
+}
+
+.table_wrap{
+    width: 80%;
+    margin-top: 15vh;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 2;
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+}
+
+.slide{
+    width: 100%;
+    height: 30vh;
+    background-color: rgba(255, 255, 255, .02);
+    border-radius: 34px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.slide > *{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.slide p{
+    margin-bottom: 0%;
+}
+
+.slide-img{
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: relative; */
+
+    width: 70%;
+    border-radius: 34px;
+
+}
+
+.title{
+    /* left: 50%;
+    transform: translate(0, -50%);
+    position: relative; */
+    width: 80%;
+    text-align: center;
+    color: rgba(255,255,255, .9);
+    font-weight: bold;
+    font-size: 1vmax;
+    font-family: 'Montserrat';
+}
+
+.price-tag{
+    display: flex;
+    flex-direction: row;
+
+    margin-top: 0%;
+    width: 80%;
+    background-color: rgba(255, 255, 255, .05);
+    border-radius: 20px;
+    padding: 0.75%;
+    padding-left: 5%;
+
+    color: rgba(255,255,255, .9);
+    font-weight: bold;
+    font-size: 0.75vmax;
+    font-family: 'Montserrat';
+}
+
+.best-price{
+    width: 55%;
+}
+
+.price{
+    width: 30%;
+    height: 100%;
+    background-color: rgb(114, 87, 237, 0.7);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.price_init{
+    width: 15%;
+    text-decoration: line-through;
+}
+
+.table_link{
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}

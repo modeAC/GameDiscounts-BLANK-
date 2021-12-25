@@ -1,0 +1,241 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url("./resources/fonts/Montserrat-ExtraLight.ttf");
+}
+
+.content_wrap{
+    margin-top: 15vh;
+    margin-left: 5%;
+    margin-right: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.wrap1{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.content_quote{
+    position: relative;
+    width: 30%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.content_logo{
+    background-image: url('./resources/NewGamesThatYouEnjoy.png');
+    background-size: cover;
+    height: auto;
+    width: 60%;
+}
+
+.text{
+    width: 80%;
+    color: #77829A;
+    /* font-weight: bold; */
+    font-weight: 900;
+    font-family: 'Montserrat';
+}
+
+.join_us {
+    margin-top: 3vh;
+
+    height: 80%;
+    min-height: 60px;
+    max-height: 3vmax;
+    width: 30%;
+
+    color: rgba(255,255,255, .75);
+    font-weight: bold;
+    font-size: 1.25vmax;
+    font-family: 'Montserrat';
+
+    background-color: rgb(114, 87, 237, 0.7);
+    border-radius: 25px;
+    border: none;
+}
+
+.link{
+    width: 100%;
+    height: 100%;
+}
+
+.card_link{
+    width: 40%;
+    text-decoration: none;
+}
+
+.card{
+    width: 100%;
+    background-color: rgba(255, 255, 255, .02);
+    border-radius: 34px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.card > *{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.card p{
+    margin-bottom: 0%;
+}
+
+.card-img{
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: relative; */
+
+    width: 70%;
+    border-radius: 34px;
+    background-color: rgb(114, 87, 237, 0.3);
+
+}
+
+.c_title{
+    /* left: 50%;
+    transform: translate(0, -50%);
+    position: relative; */
+    color: rgba(255,255,255, .9);
+    font-weight: bold;
+    font-size: 1.25vmax;
+    font-family: 'Montserrat';
+}
+
+.c_price-tag{
+    display: flex;
+    flex-direction: row;
+
+    margin-top: 0%;
+    width: 40%;
+    background-color: rgba(255, 255, 255, .05);
+    border-radius: 20px;
+    padding: 0.75%;
+
+    color: rgba(255,255,255, .9);
+    font-weight: bold;
+    font-size: 0.75vmax;
+    font-family: 'Montserrat';
+}
+
+.c_best-price{
+    margin-left: 5%;
+    width: 55%;
+    height: 100%;
+}
+
+.c_price{
+    width: 30%;
+    height: 100%;
+    background-color: rgb(114, 87, 237, 0.7);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.c_price_init{
+    width: 15%;
+    text-decoration: line-through;
+}
+
+
+.log-reg-background{
+    margin-top: 15vh;
+
+    height: 20vh;
+    width: 50vw;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, .02);
+
+    font-family: 'Montserrat';
+    color: rgba(255,255,255, .7);
+    font-weight: 1000;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.log-reg-background p{
+    margin: 0px;
+    font-size: 4vmin;
+}
+
+.content-log-reg{
+    height: 50px;
+    width: 50%;
+    min-width: 200px;
+    background-color: rgb(57, 71, 105, 0.5);
+    border-radius: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-family: 'Montserrat';
+}
+
+.content-log-reg *{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    text-decoration: none;
+}
+
+.c_login, .c_register {
+    margin: 2% 1% 2%;
+
+    height: 80%;
+    width: 80%;
+    color: rgba(255,255,255,.5);
+
+    background-color: rgb(138, 43, 226, 0);
+    border-radius: 25px;
+    border: none;
+    
+}
+
+.c_register:enabled, .c_login:focus{
+    /* background: linear-gradient(90.35deg, #2563EB 0.36%, #D946EF 201.02%); */
+    background-color: rgb(114, 87, 237, 0.7);
+    transition: .5s linear;
+}
+
+/* .login:hover ~ .register{
+    background-color: rgb(138, 43, 226, 0);
+    transition: .5s linear;
+}
+
+.register:hover ~ .login{
+    background-color: rgb(138, 43, 226, 0);
+    transition: .5s linear;
+} */
+
+.c_login:focus ~ .c_register{
+    background-color: rgb(138, 43, 226, 0);
+    
+    transition: .5s linear;
+}
+
+.c_register:focus ~ .c_login{
+    background-color: rgb(138, 43, 226, 0);
+    transition: .5s linear;
+}
+
+
+
