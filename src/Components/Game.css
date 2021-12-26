@@ -7,16 +7,19 @@
 }
 
 .g_card{
-    margin-top: 5%;
-    margin-bottom: 5%;
+    position: absolute;
+    z-index: 2;
     width: 35%;
     height: 100%;
-    background-image: url('./resources/Group1_1.png');
-    background-size: cover;
     border-radius: 0 34px 34px 0;
+    background: rgba(26, 26, 26, .7);
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.awssld{
+    height: 100%;
 }
 
 .g_card > *{
@@ -50,6 +53,7 @@
 }
 
 .home-button{
+    z-index: 2;
     /* margin-left: -75%; */
     width: 25%;
     height: 2%;
@@ -64,12 +68,19 @@
     font-weight: bold;
     font-size: 1vmax;
     font-family: 'Montserrat';
+    border-color: rgba(255,255,255, .9);
 }
 
 .add-to-favs:focus{
-    background: rgba(242, 98, 87, 0.6);
+    background: rgba(100, 30, 25, 0.6);
     transition: .5s linear;
 }
+
+.added{
+    background: rgba(100, 30, 25, 0.6);
+    transition: .5s linear;
+}
+
 
 .g_card-img{
     /* top: 50%;

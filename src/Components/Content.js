@@ -38,15 +38,17 @@ class Content extends Component {
 
                 <div class='wrap1'>
                     <ContentQuote />
-                    <Link class='card_link' to = 'reg'>
+                    {this.state.game.map(g => <>
+                    <Link class='card_link' to = {`/game/${g.id}`}>
                     <div class='card'>
-                        {this.state.game.map(g => <><p class='c_title'>{g.name}</p><img src={g.image_url} class='card-img' /><div class='c_price-tag'>
+                        <p class='c_title'>{g.name}</p><img src={g.image_url} class='card-img' /><div class='c_price-tag'>
                             <p class='c_best-price'><img class='c_store' />Best price:</p>
                             {g.price.map(p => <p class='c_price_init'>{p.initial / 100}</p>)}
                             {g.price.map(p => <p class='c_price'>{p.final / 100} {p.currency}</p>)}
-                        </div></>)}
+                        </div>
                     </div>
                     </Link>
+                    </>)}
                 </div>
                 
                 <GamesTable />

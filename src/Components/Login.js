@@ -67,7 +67,6 @@ export default class Login extends Component {
 
           <button type="submit">Login</button>
         </form>
-        <p>{this.state.loginErrors.data}</p>
       </div>
     );
   }

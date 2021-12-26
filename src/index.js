@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Registration from './Components/Registration';
 import Login from './Components/Login';
 import GamePage from './Components/Game';
+import Cabina from './Components/Cabinet';
 
 ReactDOM.render(
   // <React.StrictMode>
@@ -19,6 +20,7 @@ ReactDOM.render(
       <Route path="/reg" element={<Registration />} />
       <Route path="/log" element={<Login />} />
       <Route path="/game/:id" element={<GamePage />} />
+      <Route path="/cabina" element={<Cabina />} />
     </Routes>
   </Router>,
 

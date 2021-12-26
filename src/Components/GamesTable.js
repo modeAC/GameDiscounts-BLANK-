@@ -17,7 +17,6 @@ class GamesTable extends Component {
         axios.get(`http://localhost:8080/featured?start=0&count=8`).then(res => {
             const games = res.data;
             this.setState({ games: games });
-            console.log(5)
             // if (this.state.game.image_url != null){
             //     this.setState({img_url: this.state.game.image_url})
             // }
