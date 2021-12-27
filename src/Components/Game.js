@@ -15,13 +15,20 @@ class GamePage extends Component {
             game: [],
             wishlist: false,
             id : 0,
-            style: ''
+            style: '',
+            g_username: null
         }
     }
     
     componentDidMount() {
         const id = window.location.pathname.split('/')[2]
-        // this.setState({id: id})
+        
+        axios.get(`http://localhost:8080/username`).then(res => {
+            const username = res.data;
+            if (username != null){
+                this.setState({g_username: username.username, lr_c_opacity: 'none', c_c_opacity: 'flex'})
+            }
+        })
         
         axios.get(`http://localhost:8080/app/${id}`).then(res => {
             const game = res.data;
@@ -47,9 +54,20 @@ class GamePage extends Component {
     }
 
     handleSubmit(id) {
-        axios.put(`http://localhost:8080/wishlist/${id}`, {}, { withCredentials: true }).then(
-            this.setState({wishlist: true, style: 'added'})
-        )
+        if (this.state.wishlist == false){
+            axios.put(`http://localhost:8080/wishlist/${id}`, {}, { withCredentials: true }).then(res => {
+                if (this.state.g_username != null){
+                    this.setState({wishlist: true, style: 'added'})
+                }
+            })
+        }
+        else{
+            axios.delete(`http://localhost:8080/wishlist/${id}`, {}, { withCredentials: true }).then(res => {
+                if (this.state.g_username != null){
+                    this.setState({wishlist: false, style: ''})
+                }
+            })
+        }
       }
 
     render() { 

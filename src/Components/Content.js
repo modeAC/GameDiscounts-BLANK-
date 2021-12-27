@@ -18,7 +18,10 @@ class Content extends Component {
         super(props);
         this.state = {  
             game: [],
-            img_url: "./resources/placeholder.png"
+            img_url: "./resources/placeholder.png",
+            username: null,
+            c_c_opacity: 'none',
+            lr_c_opacity: 'flex'
         }
     }
     
@@ -29,6 +32,12 @@ class Content extends Component {
             this.setState({img_url: this.state.game.image_url})
         })
 
+        axios.get(`http://localhost:8080/username`).then(res => {
+            const username = res.data;
+            if (username != null){
+                this.setState({username: username.username, lr_c_opacity: 'none', c_c_opacity: 'flex'})
+            }
+        })
     }
 
 
@@ -56,11 +65,14 @@ class Content extends Component {
                 <div class='log-reg-background'>
                     <p>Stay with us</p>
                     <div class="content-log-reg">
-                        <Link to = '/log'>
+                        <Link to = '/log' style={{display: `${this.state.lr_c_opacity}`}}>
                         <button class="c_login">Log In</button>
                         </Link>
-                        <Link to='/reg'>
+                        <Link to='/reg' style={{display: `${this.state.lr_c_opacity}`}}>
                         <button class="c_register">Register</button>
+                        </Link>
+                        <Link to='/cabina' style={{display: `${this.state.c_c_opacity}`}}>
+                        <button class="c_register">{this.state.username}</button>
                         </Link>
                     </div>
                 </div>

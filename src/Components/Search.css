@@ -14,7 +14,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #130f40;
+    background-color: rgb(31,31,31);
     padding-left: 0px;
   }
   .search-box{

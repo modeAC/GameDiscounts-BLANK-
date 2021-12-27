@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Navigate } from 'react-router-dom';
 
 import './Login_Registration.css'
 
@@ -11,7 +12,8 @@ export default class Registration extends Component {
       email: "",
       password: "",
       username: "",
-      registrationErrors: ""
+      registrationErrors: "",
+      redirect: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -32,56 +34,74 @@ export default class Registration extends Component {
           email: email,
           password: password,
           username: username
-        }
+        }, {withCredentials: true}
+      ).then(res => {
+        setTimeout(function(){
+          axios.post("http://localhost:8080/login",
+            {
+              username: username,
+              password: password
+            },
+            { withCredentials: true }
+          )
+      }, 3000);
+      }
       )
-      .then(response => {
-        if (response.data.status === "created") {
-          this.props.handleSuccessfulAuth(response.data);
-        }
-      })
-      .catch(error => {
-        this.state.registrationErrors = {error}
-      });
     event.preventDefault();
-    // axios.post("http://localhost:8080/login"), 
-    // {
-    //   username: username,
-    //   password: password
-    // }
+    this.setState({redirect: true})
+  }
+
+
+  renderRedirect = () => {
+    if (this.state.redirect) {
+      return <Navigate to='/cabina' />
+    }
   }
 
   render() {
     return (
       <div class='log-reg-wrap'>
-        <form onSubmit={this.handleSubmit}>
-          <input
+        {this.renderRedirect()}
+        <form onSubmit={this.handleSubmit} class='form' autocomplete="off">
+
+          <div class='log_quote'>
+            <p class='sign-in'>Sign Un</p>
+            <p>If you already have an account</p>
+            <p>You can <a href='/reg'>Login here</a>!</p>
+          </div>
+
+          <p class='lbl'>Username</p>
+          <input class='name'
               type="username"
               name="username"
-              placeholder="Username"
+              placeholder="Enter your User name"
+              autocomplete="off"
               value={this.state.username}
               onChange={this.handleChange}
               required
             />
-
-          <input
+          <p class='lbl'>Email</p>
+          <input class='email'
             type="email"
             name="email"
-            placeholder="Email"
+            placeholder="Enter your email address"
+            autocomplete="off"
             value={this.state.email}
             onChange={this.handleChange}
             required
           />
-
-          <input
+          <p class='lbl'>Password</p>
+          <input class='password'
             type="password"
             name="password"
-            placeholder="Password"
+            placeholder="Enter your Password"
+            autocomplete="off"
             value={this.state.password}
             onChange={this.handleChange}
             required
           />
 
-          <button type="submit">Register</button>
+          <button type="submit" class='form-btn'>Register</button>
         </form>
         <p>{this.state.registrationErrors}</p>
       </div>

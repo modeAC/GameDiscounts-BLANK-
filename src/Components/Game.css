@@ -50,6 +50,7 @@
     font-weight: bold;
     font-size: 1vmax;
     font-family: 'Montserrat';
+    transition: .5s linear;
 }
 
 .home-button{
@@ -70,12 +71,6 @@
     font-family: 'Montserrat';
     border-color: rgba(255,255,255, .9);
 }
-
-.add-to-favs:focus{
-    background: rgba(100, 30, 25, 0.6);
-    transition: .5s linear;
-}
-
 .added{
     background: rgba(100, 30, 25, 0.6);
     transition: .5s linear;
