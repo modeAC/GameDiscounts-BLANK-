@@ -70,6 +70,7 @@ export default class Login extends Component {
           <input class='password'
             // type="password"
             name="password"
+            type="password"
             placeholder="Enter your Password"
             value={this.state.password}
             onChange={this.handleChange}

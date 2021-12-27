@@ -4,6 +4,10 @@ import { Navigate } from 'react-router-dom';
 
 import './Login_Registration.css'
 
+function timeout(delay) {
+  return new Promise( res => setTimeout(res, delay) );
+}
+
 export default class Registration extends Component {
   constructor(props) {
     super(props);
@@ -36,15 +40,14 @@ export default class Registration extends Component {
           username: username
         }, {withCredentials: true}
       ).then(res => {
-        setTimeout(function(){
-          axios.post("http://localhost:8080/login",
-            {
-              username: username,
-              password: password
-            },
-            { withCredentials: true }
-          )
-      }, 3000);
+        timeout(2000)
+        axios.post("http://localhost:8080/login",
+          {
+            username: username,
+            password: password
+          },
+          { withCredentials: true }
+        )
       }
       )
     event.preventDefault();
@@ -53,8 +56,9 @@ export default class Registration extends Component {
 
 
   renderRedirect = () => {
+    timeout(3000)
     if (this.state.redirect) {
-      return <Navigate to='/cabina' />
+      return <Navigate to='/' />
     }
   }
 
@@ -67,7 +71,7 @@ export default class Registration extends Component {
           <div class='log_quote'>
             <p class='sign-in'>Sign Un</p>
             <p>If you already have an account</p>
-            <p>You can <a href='/reg'>Login here</a>!</p>
+            <p>You can <a href='/log'>Login here</a>!</p>
           </div>
 
           <p class='lbl'>Username</p>
